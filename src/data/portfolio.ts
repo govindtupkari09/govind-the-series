@@ -23,9 +23,9 @@ export const profile = {
     linkedin: 'https://linkedin.com/in/govind-tupkari-9aa243243',
     github: 'https://github.com/govindtupkari09',
   },
-  resumePdf: '/assets/Govind_Tupkari_AWS_Cloud_Engineer_Resume.pdf',
+  resumePdf: `${import.meta.env.BASE_URL}assets/Govind_Tupkari_AWS_Cloud_Engineer_Resume.pdf`,
   portrait: {
-    src: '/assets/govind-portrait.svg',
+    src: `${import.meta.env.BASE_URL}assets/govind-portrait.svg`,
     srcSet: '',
     alt: 'Govind Tupkari monogram artwork',
   },
