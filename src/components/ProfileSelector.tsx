@@ -38,9 +38,10 @@ export default function ProfileSelector({ onPick }: { onPick: (id: ProfileId) =>
       className="fixed inset-0 z-[110] flex flex-col items-center justify-center overflow-y-auto bg-ink px-4 py-16"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 1.08, filter: 'blur(10px)' }}
+      exit={{ opacity: 0, filter: 'blur(10px)' }}
       transition={{ duration: 0.7, ease: EASE }}
       role="dialog"
+      aria-modal="true"
       aria-label="Who's watching?"
     >
       <div aria-hidden className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(229,19,43,0.14),transparent_70%)]" />

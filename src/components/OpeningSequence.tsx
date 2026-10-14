@@ -41,6 +41,7 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
       exit={{ opacity: 0, scale: 1.04, filter: 'blur(12px)' }}
       transition={{ duration: 0.9, ease: EASE }}
       role="dialog"
+      aria-modal="true"
       aria-label="Opening titles"
     >
       {/* letterbox bars */}
@@ -100,7 +101,7 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center">
         <motion.h1
           className="font-display leading-[0.82] text-bone drop-shadow-[0_8px_40px_rgba(0,0,0,0.8)]"
-          style={{ fontSize: 'clamp(4.6rem, 20vw, 15rem)' }}
+          style={{ fontSize: 'clamp(3rem, 18vw, 15rem)' }}
           initial={{ opacity: 0, scale: 1.3, filter: 'blur(20px)', letterSpacing: '0.5em' }}
           animate={beat >= 2 ? { opacity: 1, scale: 1, filter: 'blur(0px)', letterSpacing: '0.04em', y: beat >= 4 ? '-30vh' : 0 } : {}}
           transition={{ duration: 1.3, ease: EASE }}
@@ -118,7 +119,7 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
       </div>
 
       {/* role + play */}
-      <div className="absolute inset-x-0 bottom-[9vh] z-20 flex flex-col items-center gap-6 px-4 text-center">
+      <div className="absolute inset-x-0 bottom-[calc(9vh+3rem+env(safe-area-inset-bottom))] z-20 flex flex-col items-center gap-6 px-4 text-center 2xl:bottom-[9vh]">
         <motion.p
           className="font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-bone/90 sm:text-sm sm:tracking-[0.4em]"
           initial={{ opacity: 0, y: 14 }}
@@ -145,7 +146,7 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
       <button
         type="button"
         onClick={onDone}
-        className="absolute right-4 top-[calc(7vh+12px)] z-40 rounded-full border border-white/20 px-4 py-2 font-sans text-[11px] font-semibold tracking-[0.2em] text-mist transition hover:border-white/60 hover:text-bone"
+        className="absolute bottom-[calc(7vh+0.5rem+env(safe-area-inset-bottom))] left-4 z-40 flex min-h-11 items-center rounded-full border border-white/20 px-4 py-2 font-sans text-[11px] font-semibold tracking-[0.2em] text-mist transition hover:border-white/60 hover:text-bone 2xl:bottom-auto 2xl:left-auto 2xl:right-4 2xl:top-[calc(7vh+12px)]"
       >
         SKIP INTRO
       </button>

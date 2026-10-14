@@ -42,9 +42,9 @@ export default function Seasons() {
       <AnimatePresence mode="wait">
         <motion.div
           key={season.number}
-          initial={{ opacity: 0, x: 40, filter: 'blur(8px)' }}
-          animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-          exit={{ opacity: 0, x: -40, filter: 'blur(8px)' }}
+          initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          exit={{ opacity: 0, y: -24, filter: 'blur(8px)' }}
           transition={{ duration: 0.55, ease: EASE }}
         >
           <div className="gutter mb-2 flex flex-wrap items-baseline gap-x-4 gap-y-1">

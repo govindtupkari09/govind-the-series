@@ -57,6 +57,24 @@ function Series() {
   const [toast, setToast] = useState<string | null>(null);
   const { scrollTo, lock, unlock } = useSmoothScroll();
 
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const params = [...url.searchParams.entries()];
+    if (!params.some(([key, value]) => key === 'utm_source' && value === 'chatgpt.com')) return;
+
+    const remaining = new URLSearchParams();
+    for (const [key, value] of params) {
+      if (key !== 'utm_source' || value !== 'chatgpt.com') remaining.append(key, value);
+    }
+
+    const query = remaining.toString();
+    window.history.replaceState(
+      window.history.state,
+      '',
+      `${url.pathname}${query ? `?${query}` : ''}${url.hash}`,
+    );
+  }, []);
+
   const order = viewerProfiles.find((p) => p.id === profileId)!.order;
 
   useEffect(() => {
@@ -118,7 +136,7 @@ function Series() {
       </AnimatePresence>
 
       {stage === 'home' && (
-        <motion.div initial={{ opacity: 0, scale: 1.03, filter: 'blur(10px)' }} animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }} transition={{ duration: 1, ease: EASE }}>
+        <motion.div initial={{ opacity: 0, filter: 'blur(10px)' }} animate={{ opacity: 1, filter: 'blur(0px)' }} transition={{ duration: 1, ease: EASE }}>
           <Navbar order={order} profileId={profileId} onSwitch={pickProfile} />
           <main>
             <Hero key={`hero-${profileId}`} onPlay={() => setPlaying(true)} onResume={() => setResumeOpen(true)} profileId={profileId} />

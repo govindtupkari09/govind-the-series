@@ -91,7 +91,7 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
               aria-haspopup="menu"
               aria-expanded={menu}
               aria-label={`Viewing as ${current.name}. Switch profile`}
-              className="flex items-center gap-2 rounded-md p-1"
+              className="flex min-h-11 items-center gap-2 rounded-md p-1"
             >
               <ProfileAvatar id={profileId} size="sm" />
               <motion.span animate={{ rotate: menu ? 180 : 0 }} className="text-[10px] text-mist">
@@ -133,7 +133,7 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
           </div>
           <button
             type="button"
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 lg:hidden"
             aria-label={mobileNav ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileNav}
             onClick={() => setMobileNav((v) => !v)}
