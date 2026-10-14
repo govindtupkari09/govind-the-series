@@ -1,0 +1,32 @@
+node_modules
+dist
+
+# Environment configuration and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials
+credentials.*
+.aws/
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+/.claude
