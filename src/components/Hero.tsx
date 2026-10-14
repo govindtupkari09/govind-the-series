@@ -86,7 +86,7 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
           {/* rim light ring */}
           <div aria-hidden className="absolute bottom-[8%] left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-full border border-crimson-2/20 shadow-[0_0_120px_rgba(229,19,43,0.35),inset_0_0_80px_rgba(229,19,43,0.18)]"           />
           <img
-            src="/assets/govind-profile.webp"
+            src={`${import.meta.env.BASE_URL}assets/govind-profile.webp`}
             sizes="(max-width: 1024px) 100vw, 54vw"
             alt="Portrait of Govind Tupkari"
 
